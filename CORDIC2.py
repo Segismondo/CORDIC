@@ -11,7 +11,7 @@ def cordic_trig(beta,N=40):
         return K
 
 
-    K = 0.6072529350088812561694
+    K = 0.6072
     atans = [math.atan(2.0**(-i)) for i in range(0,N)]
     x = 1
     y = 0
@@ -26,9 +26,11 @@ def cordic_trig(beta,N=40):
     return K*x, K*y
 
 if __name__ == '__main__':
-    beta = math.pi
+    beta = 1
     print("Actual cos(%f) = %f" % (beta, math.cos(beta)))
-    print ("Actual sin(%f) = %f" % (beta, math.sin(beta)))
+    print ("Actual sin(%f) = %f\n" % (beta, math.sin(beta)))
+
     cos_val, sin_val = cordic_trig(beta)
+    
     print ("CORDIC cos(%f) = %f" % (beta, cos_val))
     print ("CORDIC sin(%f) = %f" % (beta, sin_val))
