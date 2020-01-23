@@ -7,7 +7,7 @@ def get_angle(beta:str):
     else:
         return 0
     
-def cordic_trig(beta,N=40):
+def cordic(beta,N=40):
     ##the error factor for the number of iterations (rotations)
     def K_vals(n):
         K = []
@@ -17,20 +17,19 @@ def cordic_trig(beta,N=40):
             K.append(acc)
         return K
 
-
     K = K_vals(N)
-    atans = [arctan(2.0**(-i)) for i in range(0,N)]
-    x = 1
-    y = 0
+    ##sin(a) + cos(a) for a = 0
+    x, y = 1, 0
     
+    ##the main loop
     for i in range(0,N):
-        ##flipping sign for certain quadrants
+        ##go (counter)clockwise, because the desired angle is (larger) smaller
         d = 1.0
         if beta < 0:
             d = -1.0
-
         (x, y) = (x - (d * (2.0 ** (-i)) * y), (d * (2.0 ** (-i)) * x) + y)
         beta = beta - (d*arctan(2**(-i)))
+        
     return K*x, K*y
 
 if __name__ == '__main__':
@@ -43,7 +42,7 @@ if __name__ == '__main__':
 
     print("CORDIC in the works")
 
-##    cos_val, sin_val = cordic_trig(beta,3)
+##    cos_val, sin_val = cordic(beta,3)
 ##    
 ##    print ("CORDIC cos(%f) = %f" % (beta, cos_val))
 ##    print ("CORDIC sin(%f) = %f" % (beta, sin_val))
