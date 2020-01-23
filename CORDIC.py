@@ -1,14 +1,15 @@
 from numpy import pi, sin, cos, arctan, sqrt
 
 def get_angle(beta:str):
+    '''return floating-point value of a symbolic string pi/n'''
     if beta != "0":
         beta = beta.split("/")
         return pi/int(beta[1])
     else:
         return 0
 
-##the error factor for the number of iterations (rotations)
 def error(n):
+    '''returns the error factor for the number of iterations (rotations)'''
     K = 1.0
     for i in range(0, n):
         K = K * (1.0/sqrt(1 + 2.0**(-2*i)))
