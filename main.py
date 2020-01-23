@@ -9,7 +9,7 @@ import CORDIC
 import plotter
 
 beta,n, = CORDIC.menu()
-sin_init,cos_init = CORDIC.init(beta)
+cos_init, sin_init = CORDIC.init(beta)
 
 plotter.init()
 plotter.plot_line(cos_init,sin_init,style='o:g')
