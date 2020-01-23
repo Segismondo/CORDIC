@@ -16,7 +16,7 @@ def error(n):
     return K
 
 def cordic(beta:float,n:int,K=None):
-    '''return sin and cos of beta, calculated using CORDIC algorithm'''
+    '''return cos and sin of beta, calculated using CORDIC algorithm'''
     ##(sin(a) + cos(a)) tuple for a = 0, error after N iterations
     point = (1, 0)
     if K==None:
@@ -37,6 +37,10 @@ def menu():
     beta, n = input("Angle in radians, num of iterations like (ex. pi/2 30): ").split()
     beta, n = get_angle(beta), int(n)
     return beta, n
+
+def init(beta:float):
+    '''returns cos and sin of beta, calculated with numpy'''
+    return cos(beta), sin(beta),
 
 if __name__ == '__main__':
     beta, n = menu()

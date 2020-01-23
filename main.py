@@ -1,13 +1,23 @@
-import CORDIC
-
-beta,n = CORDIC.menu()
-sin,cos = CORDIC.cordic(beta, n)
-print("sin = %f\ncos = %f"% (sin, cos))
-
 '''
-This will:
-    -get angle beta and number of iterations
+This:
+    -gets angle beta and number of iterations
     -draw actual cos(B) + sin(B)
-    -draw the vector (0,0) -> cos(Bi) + sin(Bi) in each iteration
-    Ima start working, so that we pass the maths classes xD
+    -draws the vector (0,0) -> cos(Bi) + sin(Bi) in each iteration
 '''
+
+import CORDIC
+import plotter
+
+beta,n, = CORDIC.menu()
+sin_init,cos_init = CORDIC.init(beta)
+
+plotter.init()
+plotter.plot_line(cos_init,sin_init,style='o:g')
+
+for i in range(0,n):
+    cos,sin = CORDIC.cordic(beta, i+1)
+    print("sin = %f\ncos = %f"% (sin, cos))
+    plotter.plot_line(cos,sin)
+
+
+
