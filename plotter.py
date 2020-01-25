@@ -8,6 +8,9 @@ def init():
     plt.ion()
     fig = plt.figure()
     plt.title("The unit circle")
+    plt.xlabel("x axis")
+    plt.ylabel("y axis")
+    
     global ax
     ax = fig.add_subplot()
 

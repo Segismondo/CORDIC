@@ -1,12 +1,9 @@
-from numpy import pi, sin, cos, arctan, sqrt, longdouble
+from numpy import pi, sin, cos, arctan, sqrt
 
 def get_angle(beta:str):
     '''return floating-point value of a symbolic string pi/n'''
-    if beta != "0":
-        beta = beta.split("/")
-        return pi/int(beta[1])
-    else:
-        return 0
+    ##dunno if that's sufficient or not
+    return eval(beta)
 
 def error(n):
     '''returns the error factor for the number of iterations (rotations)'''

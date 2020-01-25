@@ -9,11 +9,12 @@ import CORDIC
 import plotter
 from decimal import Decimal
 
+'''the angle is correct, but now CORDIC fucks up somehow'''
 beta,n, = CORDIC.menu()
 cos_init, sin_init = CORDIC.init(beta)
 
 plotter.init()
-plotter.plot_line(Decimal(cos_init),Decimal(sin_init),style='o:g')
+plotter.plot_line(cos_init,sin_init,style='o:g')
 
 for i in range(0,n):
     cos,sin = CORDIC.cordic(beta, i+1)
