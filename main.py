@@ -19,5 +19,5 @@ for i in range(0,n):
     print("sin = %f\ncos = %f"% (sin, cos))
     plotter.plot_line(cos,sin)
 
-
+input("Any key to terminate...")
 
