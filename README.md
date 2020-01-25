@@ -12,11 +12,11 @@ https://gyazo.com/410c5b79363f83c057ad540a22ddff83  (numerical example from rand
 https://gyazo.com/03f55cd39914ae839e223b92e02691c6  (results on our algorithm)
 
 
-In CORDIC2.py the default number of iterations is 40 (N). It can be changed in lane 33: 
+~~In CORDIC2.py the default number of iterations is 40 (N). It can be changed in lane 33: 
 
-cos_val, sin_val = cordic_trig(beta)  //Default value = 40
+~~cos_val, sin_val = cordic_trig(beta)  //Default value = 40~~
 
-OR
+~~OR~~
 
-cos_val, sin_val = cordic_trig(beta, 3) //3 iterations
+~~cos_val, sin_val = cordic_trig(beta, 3) //3 iterations~~
 
