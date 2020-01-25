@@ -1,4 +1,4 @@
-from numpy import pi, sin, cos, arctan, sqrt
+from numpy import pi, sin, cos, arctan, sqrt, longdouble
 
 def get_angle(beta:str):
     '''return floating-point value of a symbolic string pi/n'''
