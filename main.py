@@ -10,7 +10,7 @@ import plotter
 from decimal import Decimal
 
 '''the angle is correct, but now CORDIC fucks up somehow'''
-beta,n, = CORDIC.menu()
+beta,n = CORDIC.menu()
 cos_init, sin_init = CORDIC.init(beta)
 
 plotter.init()
