@@ -1,8 +1,7 @@
 from numpy import pi, sin, cos, arctan, sqrt
 
 def get_angle(beta:str):
-    '''return floating-point value of a symbolic string pi/n'''
-    ##dunno if that's sufficient or not
+    '''returns floating-point value of a symbolic string pi/n'''
     return eval(beta)
 
 def error(n):
@@ -13,8 +12,8 @@ def error(n):
     return K
 
 def cordic(beta:float,n:int,K=None):
-    '''return cos and sin of beta, calculated using CORDIC algorithm'''
-    ##(sin(a) + cos(a)) tuple for a = 0, error after N iterations
+    '''returns cos and sin of beta, calculated using CORDIC algorithm'''
+    ##(cos(a) + sin(a)) tuple for a = 0, error after N iterations
     point = (1, 0)
     if K==None:
         K = error(n)
@@ -25,7 +24,7 @@ def cordic(beta:float,n:int,K=None):
         if beta < 0:
             d = -1.0
         x, y    = point[0], point[1]
-        point   = (x - (d * (2.0 ** (-i))) * y, d * (2.0 ** (-i)) * x + y)
+        point   = (x - (d * (2.0 ** (-i))) * y, y +  (d * (2.0 ** (-i))))
         beta    = beta - (d*arctan(2**(-i)))
         
     return K*point[0], K*point[1]
