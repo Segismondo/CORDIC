@@ -7,14 +7,14 @@ def init():
     ##interactive mode
     plt.ion()
     fig = plt.figure()
-    plt.title("The unit circle")
+    plt.title("The unit circle of eternal fun and joy (for kids)")
     plt.xlabel("x axis")
     plt.ylabel("y axis")
     
     global ax
     ax = fig.add_subplot()
 
-    ##axis
+    ##axes
     X_AXIS = plt.plot([-1,1],[0,0],'k')
     Y_AXIS = plt.plot([0,0],[-1,1],'k')
     
